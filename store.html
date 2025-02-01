@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colony SMP - Store</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: 0.3s ease-in-out;
+        }
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Header */
+        header {
+            margin-top: 100px;
+            padding: 50px 20px;
+        }
+
+        /* Store Section */
+        .store-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 50px 10px;
+        }
+        .rank-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0px 0px 10px cyan;
+        }
+        .rank-box img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .order-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: orange;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 0px 10px orange;
+        }
+        .order-btn:hover {
+            background: red;
+            box-shadow: 0px 0px 15px red;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="staff.html">Staff</a>
+        <a href="store.html">Store</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>Rank Shop</h1>
+        <p>Beli rank eksklusif dan nikmati keuntungannya!</p>
+    </header>
+
+    <!-- Rank List -->
+    <div class="store-container">
+        <div class="rank-box">
+            <img src="wizard.png" alt="Rank 1">
+            <h3>WIZARD</h3>
+            <p>Rp 20.000</p>
+            <a href="https://wa.me/62887435168753?text=Bang%20Mau%20beli%20rank%20wizard%20minta%20Ewallet/Rekeningnya%20bang." class="order-btn">Order Here</a>
+        </div>
+        <div class="rank-box">
+            <img src="source.png" alt="Rank 1">
+            <h3>SOURCE</h3>
+            <p>Rp 40.000</p>
+            <a href="https://wa.me/62887435168753?text=Bang%20Mau%20beli%20rank%20source%20minta%20Ewallet/Rekeningnya%20bang." class="order-btn">Order Here</a>
+        </div>
+        <div class="rank-box">
+            <img src="physical.png" alt="Rank 1">
+            <h3>PHYSICAL</h3>
+            <p>Rp 60.000</p>
+            <a href="https://wa.me/62887435168753?text=Bang%20Mau%20beli%20rank%20physical%20minta%20Ewallet/Rekeningnya%20bang." class="order-btn">Order Here</a>
+        </div>
+        <div class="rank-box">
+            <img src="archmage.png"Rank 1">
+            <h3>ARCHMAGE</h3>
+            <p>Rp 80.000</p>
+            <a href="https://wa.me/62887435168753?text=Bang%20Mau%20beli%20rank%20archmage%20minta%20Ewallet/Rekeningnya%20bang." class="order-btn">Order Here</a>
+        </div>
+        <div class="rank-box">
+            <img src="gryphon.png" alt="Rank 1">
+            <h3>GRYPHON</h3>
+            <p>Rp 100.000</p>
+            <a href="https://wa.me/62887435168753?text=Bang%20Mau%20beli%20rank%20gryphon%20minta%20Ewallet/Rekeningnya%20bang." class="order-btn">Order Here</a>
+        </div>
+        <div class="rank-box">
+            <img src="vampire.png" alt="Rank 1">
+            <h3>VAMPIRE</h3>
+            <p>Rp 200.000</p>
+            <a href="https://wa.me/62887435168753?text=Bang%20Mau%20beli%20rank%20vampire%20minta%20Ewallet/Rekeningnya%20bang." class="order-btn">Order Here</a>
+        </div>
+        <div class="rank-box">
+            <img src="legendary.png" alt="Rank 1">
+            <h3>LEGENDARY</h3>
+            <p>Rp 250.000</p>
+            <a href="https://wa.me/62887435168753?text=Bang%20Mau%20beli%20rank%20legendary%20minta%20Ewallet/Rekeningnya%20bang." class="order-btn">Order Here</a>
+        </div>
+        <div class="rank-box">
+            <img src="heroic..png"Rank 1">
+            <h3>HEROIC</h3>
+            <p>Rp 300.000</p>
+            <a href="https://wa.me/62887435168753?text=Bang%20Mau%20beli%20rank%20heroic%20minta%20Ewallet/Rekeningnya%20bang." class="order-btn">Order Here</a>
+        </div>
+        <div class="rank-box">
+            <img src="bowler.png"Rank 1">
+            <h3>BOWLER</h3>
+            <p>Rp 600.000</p>
+            <a href="https://wa.me/62887435168753?text=Bang%20Mau%20beli%20rank%20bowler%20minta%20Ewallet/Rekeningnya%20bang." class="order-btn">Order Here</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Colony SMP. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

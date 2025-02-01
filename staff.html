@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colony SMP - Staff</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: 0.3s ease-in-out;
+        }
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Header */
+        header {
+            margin-top: 100px;
+            padding: 50px 20px;
+        }
+
+        /* Staff Section */
+        .staff-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 50px 10px;
+        }
+        .staff-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0px 0px 10px cyan;
+        }
+        .staff-box img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="staff.html">Staff</a>
+        <a href="store.html">Store</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>Staff Colony SMP</h1>
+        <p>Tim yang bekerja keras untuk menjaga server tetap berjalan!</p>
+    </header>
+
+    <!-- Daftar Staff -->
+    <div class="staff-container">
+        <div class="staff-box">
+            <img src="logo.png" alt="Owner">
+            <h3>Wakaz</h3>
+            <p>Owner utama Colony SMP.</p>
+        </div>
+        <div class="staff-box">
+            <img src="logo.png" alt="Developer+">
+            <h3>Handika</h3>
+            <p>Developer utama yang mengelola sistem.</p>
+        </div>
+        <div class="staff-box">
+            <img src="logo.png" alt="Developer">
+            <h3>Dhafa</h3>
+            <p>Membantu dalam pengembangan fitur server.</p>
+        </div>
+        <div class="staff-box">
+            <img src="logo.png" alt="Admin">
+            <h3>RAHASIA</h3>
+            <p>Admin yang menjaga keamanan server.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Colony SMP. All Rights Reserved.</p>
+        <p>DEVELOPED BY [Handika DEV+]</p>
+    </footer>
+
+</body>
+</html>
