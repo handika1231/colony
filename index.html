@@ -14,18 +14,6 @@
             color: white;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-        }
-
-        /* Canvas untuk efek salju */
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 999;
         }
 
         /* Navigasi */
@@ -49,76 +37,128 @@
             background: rgba(255, 255, 255, 0.2);
             border-radius: 5px;
         }
+
+        /* Header */
+        header {
+            margin-top: 80px;
+            padding: 50px 20px;
+        }
+        .logo {
+            width: 150px;
+            animation: bounce 2s infinite alternate;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0px 0px 10px cyan;
+        }
+        .subtext {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        /* Tombol */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 15px;
+            background: orange;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 10px;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.8);
+        }
+        .btn:hover {
+            background: red;
+            box-shadow: 0px 0px 20px red;
+        }
+
+        /* Animasi */
+        .fade-in { animation: fadeIn 2s ease-in-out; }
+        .slide-in { animation: slideIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { transform: translateX(-100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes bounce { from { transform: translateY(0px); } to { transform: translateY(-10px); } }
+
+        /* Fitur Tambahan */
+        .features {
+            margin: 50px 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .feature-box {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0px 0px 10px cyan;
+        }
+        .feature-box img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            font-size: 0.9em;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
-    <canvas id="snowCanvas"></canvas>
 
+    <!-- Navbar -->
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="staff.html">Staff</a>
         <a href="store.html">Store</a>
     </div>
 
+    <!-- Header -->
     <header>
         <img src="logo.png" alt="Colony SMP Logo" class="logo">
         <h1 class="fade-in">Welcome to Colony SMP</h1>
         <p class="subtext slide-in">Server Minecraft dengan tema Ice! Bergabunglah dan mainkan!</p>
+        <a href="minecraft://?addExternalServer=COLONY%20SMP|mc.colonysmp.xyz:19132" class="btn">Join Ke Server</a>
+        <a href="https://wa.me/yourgroup" class="btn">Join WhatsApp</a>
+        <a href="https://minecraft-server-vote.com" class="btn">Vote Server</a>
     </header>
 
+    <!-- Fitur Utama -->
+    <section class="features">
+        <div class="feature-box fade-in">
+            <img src="logo.png" alt="Survival Mode">
+            <h3>Survival Ice Mode</h3>
+            <p>Rasakan petualangan seru di Server Colony SMP!</p>
+        </div>
+        <div class="feature-box fade-in">
+            <img src="logo.png" alt="Community">
+            <h3>Komunitas Solid</h3>
+            <p>Bergabunglah dengan komunitas aktif dan ramah!</p>
+        </div>
+        <div class="feature-box fade-in">
+            <img src="logo.png" alt="Events">
+            <h3>Event & Hadiah</h3>
+            <p>Ikuti event seru dengan hadiah menarik!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>© 2025 Colony SMP. All Rights Reserved.</p>
         <p>DEVELOPED BY [Handika DEV+]</p>
+        </div>
     </footer>
 
-    <script>
-        const canvas = document.getElementById("snowCanvas");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let snowflakes = [];
-
-        function createSnowflakes() {
-            for (let i = 0; i < 100; i++) {
-                snowflakes.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    radius: Math.random() * 3 + 1,
-                    speedY: Math.random() * 1 + 0.5
-                });
-            }
-        }
-
-        function drawSnowflakes() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "white";
-            ctx.beginPath();
-            snowflakes.forEach((flake, index) => {
-                ctx.moveTo(flake.x, flake.y);
-                ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
-            });
-            ctx.fill();
-            updateSnowflakes();
-        }
-
-        function updateSnowflakes() {
-            snowflakes.forEach((flake) => {
-                flake.y += flake.speedY;
-                if (flake.y > canvas.height) {
-                    flake.y = 0;
-                    flake.x = Math.random() * canvas.width;
-                }
-            });
-        }
-
-        function animateSnowfall() {
-            drawSnowflakes();
-            requestAnimationFrame(animateSnowfall);
-        }
-
-        createSnowflakes();
-        animateSnowfall();
-    </script>
 </body>
 </html>
