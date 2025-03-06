@@ -146,29 +146,29 @@
         <h1>MINECRAFT SERVER STATUS</h1>
         <p class="players">Checking...</p>
     </div>
-    <script>
-        const serverIP = "mc.colonysmp.xyz:25565"; // Ganti dengan IP server Minecraft Anda
-        const statusUrl = https://api.mcsrvstat.us/2/${serverIP};
+<script>
+    const serverIP = "mc.colonysmp.xyz"; // Gunakan hanya domain, tanpa port
+    const statusUrl = `https://api.mcsrvstat.us/2/${serverIP}`;
 
-        async function fetchServerStatus() {
-            try {
-                const response = await fetch(statusUrl);
-                const data = await response.json();
-                
-                if (data.online) {
-                    document.querySelector(".players").innerText = Player yang sedang online: ${data.players.online} / ${data.players.max};
-                } else {
-                    document.querySelector(".players").innerText = "Server Sedang Offline/Maintance | Harap Hubungi Developer";
-                }
-            } catch (error) {
-                document.querySelector(".players").innerText = "Maaf, Sedang Eror Tidak Dapat Liat Status Server";
+    async function fetchServerStatus() {
+        try {
+            const response = await fetch(statusUrl);
+            const data = await response.json();
+
+            if (data.online) {
+                document.querySelector(".players").innerText = `Player yang sedang online: ${data.players.online} / ${data.players.max}`;
+            } else {
+                document.querySelector(".players").innerText = "Server Sedang Offline/Maintenance | Hubungi Developer";
             }
+        } catch (error) {
+            document.querySelector(".players").innerText = "Maaf, terjadi kesalahan dalam mengambil status server.";
+            console.error("Error fetching server status:", error);
         }
+    }
 
-        fetchServerStatus();
-        setInterval(fetchServerStatus, 30000);
-    </script>
-
+    fetchServerStatus();
+    setInterval(fetchServerStatus, 30000);
+</script>
 
     <!-- Footer -->
     <footer>
