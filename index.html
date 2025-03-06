@@ -143,7 +143,7 @@
 
     <!-- Server Status -->
     <div class="server-status">
-        <h1>Minecraft Server Status</h1>
+        <h1>MINECRAFT SERVER STATUS</h1>
         <p class="players">Checking...</p>
     </div>
 
@@ -157,12 +157,12 @@
                 const data = await response.json();
                 
                 if (data.online) {
-                    document.querySelector(".players").innerText = `Players Online: ${data.players.online} / ${data.players.max}`;
+                    document.querySelector(".players").innerText = `Player yang sedang online: ${data.players.online} / ${data.players.max}`;
                 } else {
-                    document.querySelector(".players").innerText = "Server is Offline";
+                    document.querySelector(".players").innerText = "Server Sedang Offline/Maintance | Harap Hubungi Developer";
                 }
             } catch (error) {
-                document.querySelector(".players").innerText = "Error fetching server status";
+                document.querySelector(".players").innerText = "Maaf, Sedang Eror Tidak Dapat Liat Status Server";
             }
         }
 
