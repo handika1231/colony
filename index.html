@@ -156,7 +156,11 @@
             const data = await response.json();
 
             if (data.online) {
-                document.querySelector(".players").innerText = `Player yang sedang online: ${data.players.online} / ${data.players.max}`;
+                let playerList = "Tidak ada pemain online";
+                if (data.players.list && data.players.list.length > 0) {
+                    playerList = data.players.list.map((player, index) => `${index + 1}. ${player}`).join("\n");
+                }
+                document.querySelector(".players").innerText = `Player Online: ${data.players.online} / ${data.players.max}\n${playerList}`;
             } else {
                 document.querySelector(".players").innerText = "Server Sedang Offline/Maintenance | Hubungi Developer";
             }
@@ -169,6 +173,7 @@
     fetchServerStatus();
     setInterval(fetchServerStatus, 30000);
 </script>
+
 
     <!-- Footer -->
     <footer>
