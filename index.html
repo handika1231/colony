@@ -102,6 +102,19 @@
             margin-bottom: 10px;
         }
 
+        /* Server Status */
+        .server-status {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px auto;
+            box-shadow: 0 0 10px cyan;
+        }
+        .players {
+            font-size: 20px;
+        }
+
         /* Footer */
         footer {
             margin-top: 50px;
@@ -128,30 +141,39 @@
         <a href="store.html" class="btn">STORE</a>
     </header>
 
-    <!-- Fitur Utama -->
-    <section class="features">
-        <div class="feature-box fade-in">
-            <img src="logo.png" alt="Survival Mode">
-            <h3>Survival Ice Mode</h3>
-            <p>Rasakan petualangan seru di Server Colony SMP!</p>
-        </div>
-        <div class="feature-box fade-in">
-            <img src="logo.png" alt="Community">
-            <h3>Komunitas Solid</h3>
-            <p>Bergabunglah dengan komunitas aktif dan ramah!</p>
-        </div>
-        <div class="feature-box fade-in">
-            <img src="logo.png" alt="Events">
-            <h3>Event & Hadiah</h3>
-            <p>Ikuti event seru dengan hadiah menarik!</p>
-        </div>
-    </section>
+    <!-- Server Status -->
+    <div class="server-status">
+        <h1>Minecraft Server Status</h1>
+        <p class="players">Checking...</p>
+    </div>
+
+    <script>
+        const serverIP = "your.server.ip:port"; // Ganti dengan IP server Minecraft Anda
+        const statusUrl = `https://api.mcsrvstat.us/2/${serverIP}`;
+
+        async function fetchServerStatus() {
+            try {
+                const response = await fetch(statusUrl);
+                const data = await response.json();
+                
+                if (data.online) {
+                    document.querySelector(".players").innerText = `Players Online: ${data.players.online} / ${data.players.max}`;
+                } else {
+                    document.querySelector(".players").innerText = "Server is Offline";
+                }
+            } catch (error) {
+                document.querySelector(".players").innerText = "Error fetching server status";
+            }
+        }
+
+        fetchServerStatus();
+        setInterval(fetchServerStatus, 30000);
+    </script>
 
     <!-- Footer -->
     <footer>
         <p>© 2025 Colony SMP. All Rights Reserved.</p>
         <p>DEVELOPED BY [Handika DEV+]</p>
-        </div>
     </footer>
 
 </body>
